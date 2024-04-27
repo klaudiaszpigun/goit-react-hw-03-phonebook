@@ -31,7 +31,7 @@ export const App = () => {
     ) {
       const newContact = { id: nanoid(), name: name, number: number };
       setContacts([...contacts, newContact]);
-      console.log('New contacts:', [...contacts, newContact]); // Logujemy nowy stan danych
+      console.log('New contacts:', [...contacts, newContact]);
       saveToLocalStorage([...contacts, newContact]);
     } else {
       alert(`User is already in contacts`);
@@ -65,12 +65,12 @@ export const App = () => {
     console.log(
       'Contacts after deletion:',
       contacts.filter(contact => contact.id !== id)
-    ); // Logujemy nowy stan danych po usunięciu
+    );
     saveToLocalStorage(contacts.filter(contact => contact.id !== id));
   };
 
   const saveToLocalStorage = updatedContacts => {
-    console.log('Saving contacts to localStorage:', updatedContacts); // Logujemy dane przed zapisem do localStorage
+    console.log('Saving contacts to localStorage:', updatedContacts);
     localStorage.setItem('contacts', JSON.stringify(updatedContacts));
   };
 
